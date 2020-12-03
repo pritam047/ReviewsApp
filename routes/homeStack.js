@@ -8,7 +8,7 @@ import ReviewDetails from "../screens/ReviewDetails";
 const Stack = createStackNavigator();
 
 
-export default () => (
+export const HomeStack = () => (
   <NavigationContainer>
     <Stack.Navigator
       initialRouteName="Home"
@@ -40,3 +40,5 @@ export default () => (
     </Stack.Navigator>
   </NavigationContainer>
 );
+
+export default HomeStack;
