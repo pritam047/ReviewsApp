@@ -1,8 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity,FlatList} from 'react-native'
 import {globalStyles} from '../styles/global';
 
-export default function Home(){
+export default function Home({ navigation }){
     const [reviews, setReviews] = useState([
         { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
         { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
