@@ -1,44 +1,37 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../screens/Home";
-import ReviewDetails from "../screens/ReviewDetails";
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 
-
-const Stack = createStackNavigator();
-
+import Home from '../screens/Home';
+import ReviewDetails from '../screens/ReviewDetails';
+import Header from '../shared/header';
+const { Navigator, Screen } = createStackNavigator();
 
 export const HomeStack = () => (
-  <NavigationContainer>
-    <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#eee",
-          height: 60,
-        },
-        headerTintColor: "#fff",
+  <Navigator
+    headerMode='screen'
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#eee',
+      },
+      headerTintColor: '#444',
+      height: 60
+    }}
+  >
+    <Screen
+      name='Home'
+      component={Home}
+      options={({navigation}) => {
+        return {
+          headerTitle: () => <Header title='GameZone' navigation={navigation} />
+        }
       }}
-    >
-      <Stack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          title: "GameZone",
-          headerStyle:{
-              backgroundColor : "#333"
-          }
-        }}
-      />
-      <Stack.Screen
-        name="ReviewDetails"
-        component={ReviewDetails}
-        options={{
-          title: "Review Details",
-        }}
-      />
-    </Stack.Navigator>
-  </NavigationContainer>
+    />
+    <Screen
+      name='ReviewDetails'
+      component={ReviewDetails}
+      options={{ title: 'Review Details' }}
+    />
+  </Navigator>
 );
 
 export default HomeStack;
