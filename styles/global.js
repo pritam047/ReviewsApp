@@ -21,6 +21,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    justifyContent:'space-between'
   },
   errorText : {
     color : 'crimson',
