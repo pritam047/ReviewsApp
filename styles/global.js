@@ -22,6 +22,12 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  errorText : {
+    color : 'crimson',
+    fontWeight : 'bold',
+    marginBottom : 10,
+    marginTop : 6
+  }
 });
 
 export const images = {
