@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails';
 import Header from '../shared/header';
 const { Navigator, Screen } = createStackNavigator();
+import { Image } from 'react-native';
 
 export const HomeStack = () => (
   <Navigator
@@ -22,7 +23,8 @@ export const HomeStack = () => (
       component={Home}
       options={({navigation}) => {
         return {
-          headerTitle: () => <Header title='GameZone' navigation={navigation} />
+          headerTitle: () => <Header title='GameZone' navigation={navigation} />,
+          headerBackground: () => <Image source={require('../assets/game_bg.png')} style={{height:70}}/>
         }
       }}
     />
